@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import FormCategory from './FormCategory';
 import MyTable from './MyTable';
 import TableWithInputs from './TableWithInputs'
+import { connect } from 'react-redux';
+import * as datosActions from '../actions/datosActions'
 
+//datos iniciales de prueba
 const dataCategories = [
   {
     name: 'Categoria1',
@@ -20,7 +23,7 @@ const dataCategories = [
 const App = () => {
   
   const [data,setData] = useState(dataCategories)
-
+ 
   return (
     <div className="container">
       <FormCategory data={data} setData={setData} />
@@ -31,4 +34,8 @@ const App = () => {
   )
 }
 
-export default App;
+const mapStateToProps =  (reducers) =>{
+  return reducers.datosReducer;
+} 
+
+export default connect(mapStateToProps, {datosActions })(App);

@@ -3,9 +3,7 @@ import { Button, Form } from 'react-bootstrap'
 
 export default function FormCategory(props) {
     const { data, setData } = props
-
     const [categoria, setCategoria] = useState(null)
-
     const [value, setValue] = useState(null)
 
     const handleCategoria = (e) => {
