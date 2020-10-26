@@ -10,9 +10,9 @@ function TableWithInputs(props) {
     
     
     const updateData = (e, idx, id) => {
-        let myData = [...data]
+        let myData = [...props.datos]
         myData[idx].variables[id] = e.target.value
-        setData(myData)
+        props.actualizar(myData)
     }
 
     return (

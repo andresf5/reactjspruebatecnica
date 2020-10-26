@@ -31,3 +31,12 @@ export const agregarVariable = (data) => (dispatch) =>{
 })
 
 };
+
+export const actualizar = (data) => (dispatch) =>{
+  const newData=  data
+   dispatch({
+    type: 'actualizar', 
+    payload: newData
+})
+
+};

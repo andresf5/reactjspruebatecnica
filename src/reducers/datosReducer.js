@@ -9,7 +9,9 @@ export default (state = INITIAL_STATE, action) => {
         case 'crear_categoria':
           return {...state, datos: action.payload}
         case 'agregar_variable':
-          return {...state, datos: action.payload}  
+          return {...state, datos: action.payload} 
+        case 'actualizar':
+          return {...state, datos: action.payload}     
         default: return state;
         }
         
