@@ -2,8 +2,16 @@ export const  traerTodos = () =>  (dispatch) =>{
 
   const datosprueba=  [
     {
-      name: 'Cat example',
-      variables: ['v1','v2', 'v3']
+      name: 'PRUEBA1',
+      variables: ['v4','v1', 'v3']
+    },
+    {
+      name: 'PRUEBA2',
+      variables: ['v2']
+    },
+    {
+      name: 'PRUEBA3',
+      variables: ['v3','drill']
     },
  
   ]

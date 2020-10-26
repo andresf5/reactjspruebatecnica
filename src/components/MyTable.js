@@ -1,9 +1,25 @@
 import React from 'react'
-import { Table, TextField } from 'react-bootstrap'
+import { Table  } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import * as datosActions from '../actions/datosActions'
+import productLodash from 'lodash';
+import 'lodash.product';
 
 function MyTable(props) {
+
+    const productoColumnas = () => {
+        let productos= []
+        //let cadena=''
+        for (let item in props.datos) {
+                
+           productos.push(props.datos[item].variables)             
+        }
+
+        let product = productLodash.product(  ...productos  );
+        return product
+    }
+
+    const producto = productoColumnas()
 
     return (
         <div>
@@ -15,12 +31,20 @@ function MyTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.datos.map((category, idx) => (
-                        <tr key={idx}>
-                            <td> {category.name} </td>
-                            { category.variables ? category.variables.map((variable, id) => <td key={id}> {variable} </td>) : null}
-                        </tr>
-                    ))}
+
+                     { producto.map((item, id)=>(
+
+                         <tr key={id}>
+                             <td>
+                             {`${item}`}
+                             </td>
+                             
+                         </tr>
+
+
+                     )) } 
+
+
                 </tbody>
             </Table>
         </div>
