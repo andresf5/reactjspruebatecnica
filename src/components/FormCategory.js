@@ -5,7 +5,7 @@ import * as datosActions from '../actions/datosActions'
 
 function FormCategory(props) {
     
-    const { data, setData } = props
+    //const { data, setData } = props
     const [categoria, setCategoria] = useState(null)
     const [value, setValue] = useState(null)
 
@@ -16,25 +16,26 @@ function FormCategory(props) {
     const handleVariable = (e) => {
         setValue(e.target.value)
     }
+
     const searchIdx = () => {
-        for (let item in data) {
-            if (data[item].name === categoria) {
+        for (let item in props.datos) {
+            if (props.datos[item].name === categoria) {
                 return item
             }
-
         }
     }
     const handleValues = (e) => {
         const index = searchIdx()
         if (index) {
-            let myData = [...data]
+            let myData = [...props.datos]
             myData[index] = {
                 name: categoria,
-                variables: [...data[index].variables, value]
+                variables: [...props.datos[index].variables, value]
             }
-            setData(myData)
+            props.agregarVariable(myData)
         } else { alert("Debes seleccionar la categoria"); }
     }
+
     return (
         <div className="margin-top">
             <Form className='my-4'>
@@ -44,18 +45,18 @@ function FormCategory(props) {
                     <Form.Control onChange={handleCategoria} type="text" placeholder="Inserte aqui la nueva categoria" name='categoria' />
 
                 </Form.Group>
-                <Button variant="primary" type="button" onClick={() => {
 
-                    setData([...data, { name: categoria, variables: [] }])
-                }} >
-                    Crear categoria
+                <Button variant="primary" type="button" 
+                 onClick={() => { props.agregarCategoria([...props.datos, {name: categoria, variables: []}]) 
+                    }} >
+                Crear categoria
                 </Button>
 
                 <Form.Group controlId="seleccionarCategoria">
                     <Form.Label>Seleccionar categoria  </Form.Label>
                     <Form.Control as="select" onChange={(e) => setCategoria(e.target.value)} >
                         <option value="" > Selecciona la categoria </option>
-                        {props.data.map((info, id) => (
+                        {props.datos.map((info, id) => (
                             <option key={id} value={info.name}> {info.name} </option>
                         ))}
 

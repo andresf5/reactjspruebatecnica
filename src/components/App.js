@@ -12,7 +12,8 @@ const App = (props) => {
     
     props.traerTodos();
   
-  }, []);   
+  
+  },[]);   
 
   
   //se pasan los datos a data mientras se realizan los
@@ -20,7 +21,7 @@ const App = (props) => {
   //de forma adecuada
 
   const [data,setData] = useState(props.datos)
- 
+  console.log(props) 
   
   return (
     <div className="container">

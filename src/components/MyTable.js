@@ -15,7 +15,7 @@ function MyTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.info.map((category, idx) => (
+                    {props.datos.map((category, idx) => (
                         <tr key={idx}>
                             <td> {category.name} </td>
                             { category.variables ? category.variables.map((variable, id) => <td key={id}> {variable} </td>) : null}
