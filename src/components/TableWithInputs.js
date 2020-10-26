@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
+import { connect } from 'react-redux';
+import * as datosActions from '../actions/datosActions'
 
 
-export default function TableWithInputs(props) {
+function TableWithInputs(props) {
 
     const { data, setData } = props
-
+    
+    
     const updateData = (e, idx, id) => {
         let myData = [...data]
         myData[idx].variables[id] = e.target.value
@@ -36,3 +39,10 @@ export default function TableWithInputs(props) {
 
     )
 }
+
+const mapStateToProps =  (reducers) =>{
+    return reducers.datosReducer;
+  
+  }; 
+
+export default  connect(mapStateToProps, datosActions)(TableWithInputs) 

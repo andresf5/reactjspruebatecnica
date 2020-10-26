@@ -1,7 +1,9 @@
 import React from 'react'
 import { Table, TextField } from 'react-bootstrap'
+import { connect } from 'react-redux';
+import * as datosActions from '../actions/datosActions'
 
-export default function MyTable(props) {
+function MyTable(props) {
 
     return (
         <div>
@@ -25,3 +27,11 @@ export default function MyTable(props) {
 
     )
 }
+
+
+const mapStateToProps =  (reducers) =>{
+    return reducers.datosReducer;
+  
+  }; 
+
+export default connect(mapStateToProps, datosActions)(MyTable)
