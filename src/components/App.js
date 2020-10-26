@@ -9,7 +9,7 @@ import * as datosActions from '../actions/datosActions'
 const App = (props) => {
  
   useEffect(() => {
-    // Actualiza el título del documento usando la API del navegador
+    
     props.traerTodos();
   
   }, []);   
@@ -18,7 +18,7 @@ const App = (props) => {
   //se pasan los datos a data mientras se realizan los
   //los Actions para usar redux en toda la app 
   //de forma adecuada
-   
+
   const [data,setData] = useState(props.datos)
  
   

@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     datos: [
         {
-          name: 'Categoria1',
+          name: 'Categoria ejemplo',
           variables: ['v1','v2', 'v5']
         },
         {
