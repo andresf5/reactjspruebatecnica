@@ -23,7 +23,7 @@ function MyTable(props) {
 
     return (
         <div>
-            <h3> Tabla solo para visualización  </h3>
+            <h3> visualización de producto de columnas  </h3>
 
             <Table responsive striped bordered hover>
                 <thead>
