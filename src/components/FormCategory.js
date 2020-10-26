@@ -48,7 +48,7 @@ function FormCategory(props) {
 
                     setData([...data, { name: categoria, variables: [] }])
                 }} >
-                    Crear
+                    Crear categoria
                 </Button>
 
                 <Form.Group controlId="seleccionarCategoria">
@@ -70,7 +70,7 @@ function FormCategory(props) {
 
 
                 <Button variant="primary" type="button" onClick={handleValues} name='variables' >
-                    Crear Variable
+                    Crear variable
                 </Button>
             </Form>
         </div>

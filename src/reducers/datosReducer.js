@@ -1,17 +1,10 @@
 const INITIAL_STATE = {
     datos: [
         {
-          name: 'Categoria ejemplo',
-          variables: ['v1','v2', 'v5']
+          name: 'Cat example',
+          variables: ['v1','v2', 'v3']
         },
-        {
-          name: 'Categoria2',
-          variables: ['v1','v2']
-        },
-        {
-          name: 'Categoria3',
-          variables: ['v1','v2','drill']
-        },  
+     
       ]
 };
 

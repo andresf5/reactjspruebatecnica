@@ -22,7 +22,7 @@ function TableWithInputs(props) {
                     <Form.Label><h3> Tabla de variables modificable </h3></Form.Label>
                     <Row>
                         {props.data.map((info, idx) => (
-                            <Col key={idx} >
+                            <Col lg={2} sm={6} key={idx} >
                                 <Row>   {info.name} </Row>
                                 { info.variables ? info.variables.map((variable, id) =>
                                     <Row key={id}>
