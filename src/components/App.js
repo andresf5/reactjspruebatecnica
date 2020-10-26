@@ -9,28 +9,16 @@ import * as datosActions from '../actions/datosActions'
 const App = (props) => {
  
   useEffect(() => {
-    
     props.traerTodos();
-  
-  
   },[]);   
-
-  
-  //se pasan los datos a data mientras se realizan los
-  //los Actions para usar redux en toda la app 
-  //de forma adecuada
-
-  const [data,setData] = useState(props.datos)
-  console.log(props) 
-  
+ 
   return (
     <div className="container">
-      <FormCategory data={data} setData={setData} />
-      <TableWithInputs data={data}  setData={setData} />
-      <MyTable info={data} />
+      <FormCategory />
+      <TableWithInputs/>
+      <MyTable/>
     </div>
-
-  )
+ )
 }
 
 const mapStateToProps =  (reducers) =>{
