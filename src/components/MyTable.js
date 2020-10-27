@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Table, Button  } from 'react-bootstrap'
+import React from 'react'
+import { Table } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import * as datosActions from '../actions/datosActions'
 import productLodash from 'lodash';

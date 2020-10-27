@@ -5,7 +5,6 @@ import * as datosActions from '../actions/datosActions'
 
 function FormCategory(props) {
     
-    //const { data, setData } = props
     const [categoria, setCategoria] = useState(null)
     const [value, setValue] = useState(null)
 
@@ -77,11 +76,9 @@ function FormCategory(props) {
         </div>
     )
 }
-
-
 const mapStateToProps =  (reducers) =>{
     return reducers.datosReducer;
-  
+ 
   }; 
 
 export default connect(mapStateToProps, datosActions)(FormCategory)
