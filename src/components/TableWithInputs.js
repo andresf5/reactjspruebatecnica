@@ -24,7 +24,7 @@ function TableWithInputs(props) {
                                 <Row>   {info.name} </Row>
                                 { info.variables ? info.variables.map((variable, id) =>
                                     <Row key={id}>
-                                        <Form.Control value={props.datos[idx].variables[id]} id={idx} name={id} onChange={(e) => updateData(e, idx, id)} type="text" />
+                                        <Form.Control value={variable} id={idx} name={id} onChange={(e) => updateData(e, idx, id)} type="text" />
                                     </Row>
                                 ) : null}
                             </Col>
