@@ -4,6 +4,8 @@ import MyTable from './MyTable';
 import TableWithInputs from './TableWithInputs'
 import { connect } from 'react-redux';
 import * as datosActions from '../actions/datosActions'
+import SnackbarProvider from 'react-simple-snackbar'
+import SomeChildComponent from './SomeChildComponent'
 
 
 const App = (props) => {
@@ -14,9 +16,12 @@ const App = (props) => {
  
   return (
     <div className="container">
-      <FormCategory />
-      <TableWithInputs/>
-      <MyTable/>
+      <SnackbarProvider>
+        <FormCategory />
+        <TableWithInputs/>
+        <MyTable/>
+      </SnackbarProvider>
+     
     </div>
  )
 }

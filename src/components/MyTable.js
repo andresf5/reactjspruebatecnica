@@ -1,29 +1,27 @@
-import React from 'react'
-import { Table  } from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import { Table, Button  } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import * as datosActions from '../actions/datosActions'
 import productLodash from 'lodash';
 import 'lodash.product';
 
 function MyTable(props) {
-
-    const productoColumnas = () => {
+    let producto
+    const productoColumnas = (producto) => {
         let productos= []
-        //let cadena=''
         for (let item in props.datos) {
-                
            productos.push(props.datos[item].variables)             
         }
-
         let product = productLodash.product(  ...productos  );
+        
         return product
     }
-
-    const producto = productoColumnas()
+      producto= productoColumnas()
 
     return (
         <div>
-            <h3> visualización de producto de columnas  </h3>
+            <h3> Visualización de producto de columnas  </h3>
+         
 
             <Table responsive striped bordered hover>
                 <thead>
@@ -40,10 +38,7 @@ function MyTable(props) {
                              </td>
                              
                          </tr>
-
-
                      )) } 
-
 
                 </tbody>
             </Table>

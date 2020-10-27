@@ -1,6 +1,7 @@
 export const  traerTodos = () =>  (dispatch) =>{
 
   const datosprueba=  [
+    
     {
       name: 'PRUEBA1',
       variables: ['v4','v1', 'v3']
@@ -23,6 +24,8 @@ export const  traerTodos = () =>  (dispatch) =>{
 };  
 
 export const agregarCategoria = (data) => (dispatch) =>{
+
+  
   const newData=  data
    dispatch({
     type: 'crear_categoria', 

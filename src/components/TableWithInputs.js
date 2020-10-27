@@ -2,13 +2,15 @@ import React from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import * as datosActions from '../actions/datosActions'
+import { useSnackbar } from 'react-simple-snackbar'
 
 function TableWithInputs(props) {
-       
+    const [openSnackbar, closeSnackbar] = useSnackbar()
     const updateData = (e, idx, id) => {
         let myData = [...props.datos]
         myData[idx].variables[id] = e.target.value
         props.actualizar(myData)
+        setTimeout(function(){  openSnackbar('Variables actualizadas.'); }, 5000);
     }
 
     return (
@@ -29,6 +31,7 @@ function TableWithInputs(props) {
                         ))}
                     </Row>
                 </Form.Group>
+          
             </Form>
         </div>
     )
